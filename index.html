@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Juros</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Calculadora de Juros</h1>
+            <p>Entenda e calcule os juros simples e compostos de forma fácil e rápida.</p>
+        </header>
+
+        <section class="explanation">
+            <div class="explanation-block">
+                <h2>O que são Juros Simples?</h2>
+                <p>Juros simples são calculados apenas sobre o valor capital original de um investimento ou empréstimo. A fórmula básica é:</p>
+                <p><strong>Juros = Capital x Taxa de Juros x Tempo</strong></p>
+                <p>Isso significa que você paga ou ganha uma quantidade fixa de juros a cada período.</p>
+            </div>
+            <div class="explanation-block">
+                <h2>O que são Juros Compostos?</h2>
+                <p>Juros compostos são calculados sobre o valor capital e também sobre os juros acumulados de períodos anteriores. A fórmula é:</p>
+                <p><strong>Montante = Capital x (1 + (Taxa de Juros / Número de Capitalizações))^(Número de Capitalizações x Tempo)</strong></p>
+                <p>Isso leva ao "efeito bola de neve", onde os juros geram mais juros ao longo do tempo.</p>
+            </div>
+        </section>
+
+        <section class="calculator-section">
+            <div class="calculator">
+                <h2>Calculadora de Juros Simples</h2>
+                <form id="simpleInterestForm">
+                    <label for="principal">Capital (P):</label>
+                    <input type="number" id="principal" placeholder="Valor inicial" required>
+
+                    <label for="rate">Taxa de Juros (% ao mês):</label>
+                    <input type="number" id="rate" placeholder="Ex: 5 para 5%" required>
+
+                    <label for="time">Tempo (meses):</label>
+                    <input type="number" id="time" placeholder="Período em meses" required>
+
+                    <button type="button" onclick="calculateSimpleInterest()">Calcular Juros Simples</button>
+                </form>
+                <div id="simpleInterestResult" class="result"></div>
+            </div>
+
+            <div class="calculator">
+                <h2>Calculadora de Juros Compostos</h2>
+                <form id="compoundInterestForm">
+                    <label for="cPrincipal">Capital (P):</label>
+                    <input type="number" id="cPrincipal" placeholder="Valor inicial" required>
+
+                    <label for="cRate">Taxa de Juros (% ao mês):</label>
+                    <input type="number" id="cRate" placeholder="Ex: 5 para 5%" required>
+
+                    <label for="cTime">Tempo (meses):</label>
+                    <input type="number" id="cTime" placeholder="Período em meses" required>
+
+                    <label for="nCompounds">Número de Capitalizações por Ano:</label>
+                    <input type="number" id="nCompounds" placeholder="Ex: 12 para mensal" required>
+
+                    <button type="button" onclick="calculateCompoundInterest()">Calcular Juros Compostos</button>
+                </form>
+                <div id="compoundInterestResult" class="result"></div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Desenvolvido por [Seu Nome]</p>
+        </footer>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
